@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <div className="sm:max-w-2xl m-auto ">
-        <header className="z-10 backdrop-blur-xs sticky top-3 max-w-2/3  p-3 mb-8 rounded-4xl m-auto mt-2 border-2">
+        <header className="z-50 backdrop-blur-xs sticky top-2 max-w-2/3  p-3 mb-8 rounded-4xl m-auto mt-4 border-2">
           <ul className="flex justify-center gap-5">
             <li className="font-bold cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out">
               <a href="#about">About</a>
