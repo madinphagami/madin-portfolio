@@ -27,7 +27,7 @@ export default function Home() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="z-50 backdrop-blur-xs sticky top-2 p-3 mb-8 rounded-4xl m-auto mt-4 border-2"
+        className="z-50 backdrop-blur-xs sticky top-2 p-3 mb-8 rounded-4xl mx-2 mt-3 border-2"
       >
         <motion.ul variants={container} className="flex justify-center gap-5">
           <motion.li
