@@ -1,5 +1,5 @@
 "use client";
-import { motion, scale } from "framer-motion";
+import { motion } from "motion/react";
 import { BadgeCheck, Github, Linkedin, ChevronRight } from "lucide-react";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.25, // time between each child animation
+        staggerChildren: 0.2, // time between each child animation
       },
     },
   };
