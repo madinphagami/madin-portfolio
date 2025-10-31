@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, easeInOut } from "motion/react";
 import { BadgeCheck, Github, Linkedin, ChevronRight } from "lucide-react";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
   // Each child animation
   const item = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeInOut } },
   };
 
   return (
