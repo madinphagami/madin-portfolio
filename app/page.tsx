@@ -20,6 +20,29 @@ export default function Home() {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeInOut } },
   };
 
+  const projects = [
+    {
+      title: "Collectors Website",
+      description:
+        "A sleek and minimal collectors showcase site built with Next.js and Tailwind CSS. Designed to highlight product visuals with smooth motion effects powered by Motion.dev and Lucide icons for a modern aesthetic. Fully responsive with attention to clean layout and interactive animations.",
+      tags: ["Tailwind", "ReactJS", "NextJS", "Lucide Icons", "Motion.Dev"],
+      link: "https://milk-app-sepia.vercel.app/",
+    },
+    {
+      title: "Bank Website",
+      description:
+        "A modern banking interface prototype built with Next.js and Tailwind CSS. Features responsive layouts, smooth animations, and component-driven design. Emphasizes accessibility, clarity, and a refined visual hierarchy for a professional financial look.",
+      tags: ["Tailwind", "ReactJS", "NextJS", "Lucide Icons"],
+      link: "https://bank-app-one-pi.vercel.app/",
+    },
+    {
+      title: "In-progress",
+      description:
+        "A dynamic fitness website currently in development. Built with Next.js and Tailwind CSS to deliver bold visuals, responsive design, and high-impact motion effects for an energetic user experience.",
+      tags: ["Tailwind", "ReactJS", "NextJS", "Lucide Icons"],
+    },
+  ];
+
   return (
     <div className="sm:max-w-2xl m-auto">
       {/* === HEADER === */}
@@ -71,14 +94,14 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="w-5" />
+              <Linkedin className="w-5 h-5 transition-transform hover:scale-110 duration-200 ease-in-out" />
             </a>
             <a
               href="https://github.com/madinphagami"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="w-5" />
+              <Github className="w-5 h-5 transition-transform hover:scale-110 duration-200 ease-in-out" />
             </a>
           </motion.div>
         </motion.section>
@@ -109,7 +132,7 @@ export default function Home() {
             exploring nature 🌿 around Auckland. I’m always excited to connect
             with other developers, share ideas, and collaborate on projects. If
             you’d like to chat, collaborate, or just say hi, feel free to email
-            me ✉️ or connect with me on LinkedIn.
+            me or connect with me on LinkedIn.
           </motion.p>
         </motion.section>
 
@@ -166,29 +189,38 @@ export default function Home() {
             <ChevronRight className="inline" /> Projects
           </motion.h2>
 
-          <motion.div variants={container} className="flex flex-col gap-5">
-            {[1, 2, 3].map((n) => (
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="flex flex-col gap-5"
+          >
+            {projects.map((project, idx) => (
               <motion.div
-                key={n}
+                key={idx}
                 variants={item}
                 whileTap={{
                   scale: 0.9,
                   transition: { duration: 0.05, ease: "easeInOut" },
                 }}
-                className="p-5 border rounded-2xl cursor-pointer transform hover:scale-105 transition-transform duration-200 ease-in-out"
+                className="p-5 border rounded-2xl transform hover:scale-105 transition-transform duration-200 ease-in-out"
               >
                 <div className="flex flex-col gap-2">
-                  <h2>In Progress</h2>
-                  <p className="text-justify">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Enim harum, voluptatem laborum vel vero magni consequuntur
-                    quae iste tempore fuga alias molestias reiciendis non
-                    necessitatibus quam earum sint? Explicabo, nesciunt!
-                  </p>
                   <div className="flex gap-2">
-                    <p className="border rounded-lg px-2">Tailwind</p>
-                    <p className="border rounded-lg px-2">ReactJS</p>
-                    <p className="border rounded-lg px-2">NextJS</p>
+                    <h2>{project.title}</h2>
+                    <span className="border rounded-lg px-2 hover:bg-foreground hover:text-background">
+                      <a href={project.link} target="_blank">
+                        Link
+                      </a>
+                    </span>
+                  </div>
+                  <p className="text-justify">{project.description}</p>
+                  <div className="flex gap-2">
+                    {project.tags.map((tag, i) => (
+                      <p key={i} className="border rounded-lg px-2">
+                        {tag}
+                      </p>
+                    ))}
                   </div>
                 </div>
               </motion.div>
