@@ -215,7 +215,7 @@ export default function Home() {
                     </span>
                   </div>
                   <p className="text-justify">{project.description}</p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     {project.tags.map((tag, i) => (
                       <p key={i} className="border rounded-lg px-2">
                         {tag}
