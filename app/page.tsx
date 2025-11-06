@@ -1,6 +1,7 @@
 "use client";
 import { motion, easeInOut } from "motion/react";
 import { BadgeCheck, Github, Linkedin, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   // Container variant controls when children animate
@@ -75,35 +76,40 @@ export default function Home() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col gap-3 mb-8"
+          className="flex flex-col gap-3 mb-8 md:flex-row md:justify-between "
         >
-          <motion.div variants={item} className="flex gap-2 items-center">
-            <h1 className="font-bold text-3xl">Madin Phagami</h1>
-            <BadgeCheck />
-          </motion.div>
+          <div className=" flex flex-col">
+            <motion.div variants={item} className="flex gap-2 items-center">
+              <h1 className="font-bold text-3xl">Madin Phagami</h1>
+              <BadgeCheck />
+            </motion.div>
 
-          <motion.h2 variants={item}>Web Developer</motion.h2>
-          <motion.h2 variants={item}>madinphagami@gmail.com</motion.h2>
-          <motion.h2 variants={item}>
-            Tāmaki Makaurau / Auckland, New Zealand
-          </motion.h2>
+            <motion.h2 variants={item}>Web Developer</motion.h2>
+            <motion.h2 variants={item}>madinphagami@gmail.com</motion.h2>
+            <motion.h2 variants={item}>
+              Tāmaki Makaurau / Auckland, New Zealand
+            </motion.h2>
 
-          <motion.div variants={item} className="flex gap-2">
-            <a
-              href="https://www.linkedin.com/in/madinphagami/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="w-5 h-5 transition-transform hover:scale-110 duration-200 ease-in-out" />
-            </a>
-            <a
-              href="https://github.com/madinphagami"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="w-5 h-5 transition-transform hover:scale-110 duration-200 ease-in-out" />
-            </a>
-          </motion.div>
+            <motion.div variants={item} className="flex gap-2">
+              <a
+                href="https://www.linkedin.com/in/madinphagami/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-5 h-5 transition-transform hover:scale-110 duration-200 ease-in-out" />
+              </a>
+              <a
+                href="https://github.com/madinphagami"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="w-5 h-5 transition-transform hover:scale-110 duration-200 ease-in-out" />
+              </a>
+            </motion.div>
+          </div>
+          <div className="flex border rounded-3xl justify-center items-center">
+            <Image src="/person.png" width={200} height={200} alt="person" />
+          </div>
         </motion.section>
 
         {/* === ABOUT SECTION === */}
