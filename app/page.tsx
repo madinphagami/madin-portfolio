@@ -78,7 +78,7 @@ export default function Home() {
           animate="show"
           className="flex flex-col gap-3 mb-8 md:flex-row md:justify-between "
         >
-          <div className=" flex flex-col">
+          <div className=" flex flex-col gap-1">
             <motion.div variants={item} className="flex gap-2 items-center">
               <h1 className="font-bold text-3xl">Madin Phagami</h1>
               <BadgeCheck />
@@ -107,9 +107,12 @@ export default function Home() {
               </a>
             </motion.div>
           </div>
-          <div className="flex border rounded-3xl justify-center items-center">
+          <motion.div
+            variants={item}
+            className="flex border rounded-3xl justify-center items-center hover:scale-105 transition-transform duration-200 ease-in-out"
+          >
             <Image src="/person.png" width={200} height={200} alt="person" />
-          </div>
+          </motion.div>
         </motion.section>
 
         {/* === ABOUT SECTION === */}
