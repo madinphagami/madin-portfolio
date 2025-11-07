@@ -76,7 +76,7 @@ export default function Home() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col gap-3 mb-8 md:flex-row md:justify-between "
+          className="flex flex-col gap-5 mb-8 md:flex-row md:justify-between "
         >
           <div className=" flex flex-col gap-1">
             <motion.div variants={item} className="flex gap-2 items-center">
@@ -111,7 +111,12 @@ export default function Home() {
             variants={item}
             className="flex border rounded-3xl justify-center items-center hover:scale-105 transition-transform duration-200 ease-in-out"
           >
-            <Image src="/person.png" width={200} height={200} alt="person" />
+            <Image
+              src="/personhover.png"
+              width={200}
+              height={200}
+              alt="person"
+            />
           </motion.div>
         </motion.section>
 
